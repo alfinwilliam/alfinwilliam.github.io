@@ -1,59 +1,35 @@
 ---
 layout:     post
-title:      Using thumbnails
-date:       2014-06-08 12:32:18
-summary:    Using thumbnails in your Carte Noire articles.
-categories: jekyll
-thumbnail: jekyll
+title:      Using JioFi3 - The Magic of Band 40
+date:       2020-11-06 20:47:18
+summary:    JioFi3 Speed hack
+categories: random hacks
+thumbnail: far fa-lightbulb
 tags:
  - thumbnails
  - carte noire
 ---
 
-Carte Noire is designed to start each article with an all-white image as a
-thumbnail. These are created by adding a `thumbnail` parameter to the article's
-[YAML frontmatter][1]. This thumbnail parameter is processed in one of two ways,
-images specified in `_data/thumbnails.yml` or using [Font Awesome][2].
+## How it started
 
-## Images
+So , during the desperate times of using mobile internet hotspot to grind my daily internet
+workflow , I thought of investing around 1k INR on a JioFI3 which was all the rage back when
+it was launched. I was confident that it'll provide me a more constant connection for running
+day to day tasks as well as occasional gaming.
 
-To use your own custom images as a thumbnail you must upload them to a web available
-location (I use [Imgur][3]) and then you need to add the url to `_data/thumbnail.yml`
-with an associated keyword.
+## How it turned out
 
-```
-jekyll: "http://i.imgur.com/aRQcGSi.png"
-```
+After the initial setup , everything was working fine but the speed was too close to mobile internet
+which made me rethink my decision on buying this. I went to the router page for a random inspection , and 
+then it struck me.
 
-You then add a `thumbnail` option to the article's frontmatter and provide the keyword
-for that thumbnail.
+## The realisation
 
-```
-thumbnail: jekyll
-```
+Going to [localhost][1] page and a little inspection gave away the fact that whenever the device is locked on to
+Band 40 , the speeds were excellent. There are a total of 3 bands. Band 3, Band 5 and Band 40. Unfortunately , there is
+no manual control alloted to the end-user where we can lock on to a specific band. The trick here is to find the perfect spot in your area where the range light is blue and the band is 40. This will provide you seemless speeds of 
+around 10 - 12 mbps where HD streaming and gaming are a breeze.
 
-This allows you to re-use thumbnails across multiple articles without having to
-specify the url each time.
 
-## Font Awesome
+[1]: http://192.168.1.1
 
-If jekyll can't find a corresponding image in your `thumbnail.yml` file then it
-will assume you want to use a Font Awesome icon instead. You can find the full
-list of Font Awesome icons [here][4].
-
-So for example if your article is about android and you want to use the [android icon][5]
-from font awesome you can just specify the following in your frontmatter.
-
-```
-thumbnail: android
-```
-
-Then in the future if you decide you want to use your own android icon you can just
-add it to `_data/thumbnails.yml` which will override it for all articles using
-the android thumbnail.
-
-[1]: http://jekyllrb.com/docs/frontmatter/
-[2]: http://fortawesome.github.io/Font-Awesome/
-[3]: http://imgur.com/
-[4]: http://fortawesome.github.io/Font-Awesome/icons/
-[5]: http://fortawesome.github.io/Font-Awesome/icon/android/
