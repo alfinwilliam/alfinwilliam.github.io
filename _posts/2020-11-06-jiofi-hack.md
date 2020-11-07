@@ -6,8 +6,8 @@ summary:    JioFi3 Speed hack
 categories: Life-Hacks
 thumbnail: lightbulb
 tags:
- - thumbnails
- - carte noire
+ - jiofi
+ - speed hack
 ---
 
 ## How it started
