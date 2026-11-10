@@ -113,4 +113,4 @@ The old site stays live until a build succeeds, so there is no rush.
 
 ## Licences
 
-The Inter font is under the SIL Open Font License 1.1, see `assets/fonts/LICENSE-Inter.txt`.
+The code is under the MIT License. The posts, profile and hobby text, and images are not; they stay copyright Alfin William. The Inter font is under the SIL Open Font License 1.1, see `assets/fonts/LICENSE-Inter.txt`. Details are in `LICENSE`.
