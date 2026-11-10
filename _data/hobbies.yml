@@ -4,17 +4,17 @@
 #   image: file name inside assets/img/hobbies/ (landscape 4:3 works best, for example 1200x900)
 #   alt:   what the photo shows, for screen readers
 
-- name: Hobby one
-  blurb: One line about this hobby.
-  image: placeholder.svg
-  alt: Placeholder image for hobby one
+- name: Cycling
+  blurb: Weekend cycling rejuvenates me to take on new challenges.
+  image: cycling.svg
+  alt: Illustration of a road bicycle in front of rolling hills
 
-- name: Hobby two
-  blurb: One line about this hobby.
-  image: placeholder.svg
-  alt: Placeholder image for hobby two
+- name: Binge-watching Movies
+  blurb: I love to get into alternate lives and it's experiences via movies.
+  image: movies.svg
+  alt: Illustration of a screen playing a film with a striped tub of popcorn beside it
 
-- name: Hobby three
-  blurb: One line about this hobby.
-  image: placeholder.svg
-  alt: Placeholder image for hobby three
+- name: Fiction Reading
+  blurb: Same as movies, but with more imagination and less visual stimulation.
+  image: reading.svg
+  alt: Illustration of an open book with a castle, crescent moon and stars rising from its pages

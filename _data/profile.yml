@@ -4,12 +4,11 @@
 name: Alfin William
 
 # The two lines of large type at the top of the home page.
-role: DevOps engineer.
-focus: AWS, Kubernetes, Terraform.
+role: DevOps engineer
+focus: AWS, Kubernetes, Terraform
 
-# Optional photo above the headline. Put a square image in assets/img/ and
-# uncomment this line.
-# avatar: /assets/img/avatar.jpg
+# Photo above the headline. Use a square image. Delete this line to show none.
+avatar: /assets/img/avatar.png
 
 # One entry per paragraph.
 about:

@@ -204,6 +204,7 @@ main {
 .hero__avatar {
   display: block;
   margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
   border-radius: 50%;
   object-fit: cover;
 }

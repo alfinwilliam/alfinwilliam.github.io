@@ -6,7 +6,7 @@ layout: default
 
 <section class="hero">
   {% if profile.avatar %}
-  <img class="hero__avatar" src="{{ profile.avatar | relative_url }}" alt="{{ profile.name }}" width="96" height="96">
+  <img class="hero__avatar" src="{{ profile.avatar | relative_url }}" alt="Photo of {{ profile.name }}" width="120" height="120">
   {% endif %}
   <h1 class="hero__title">{{ profile.role }} <span>{{ profile.focus }}</span></h1>
   <ul class="link-row">
