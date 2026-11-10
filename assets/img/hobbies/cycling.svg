@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <style>
+    .bg { fill: #e2f3f0; }
+    .sun { fill: #8ed5c9; }
+    .hill { fill: #c6e9e2; }
+    .road { fill: #a9dcd2; }
+    .dot { fill: #0b5a54; }
+    .ink, .frame, .thin { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .ink { stroke: #0b5a54; stroke-width: 10; }
+    .frame { stroke: #0f766e; stroke-width: 14; }
+    .thin { stroke: #0b5a54; stroke-width: 3; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #122b29; }
+      .sun { fill: #2a7f73; }
+      .hill { fill: #1a3f3b; }
+      .road { fill: #22524c; }
+      .dot { fill: #8fe9da; }
+      .ink { stroke: #8fe9da; }
+      .frame { stroke: #2dd4bf; }
+      .thin { stroke: #8fe9da; }
+    }
+  </style>
+  <rect class="bg" width="800" height="600"/>
+  <circle class="sun" cx="655" cy="140" r="56"/>
+  <path class="hill" d="M0 400C110 310 230 320 340 372S600 300 800 380V600H0Z"/>
+  <rect class="road" y="497" width="800" height="103"/>
+
+  <path class="thin" d="M240 308v184M148 400h184M175 335l130 130M175 465l130-130"/>
+  <path class="thin" d="M560 308v184M468 400h184M495 335l130 130M495 465l130-130"/>
+  <circle class="ink" cx="240" cy="400" r="92"/>
+  <circle class="ink" cx="560" cy="400" r="92"/>
+  <circle class="dot" cx="240" cy="400" r="9"/>
+  <circle class="dot" cx="560" cy="400" r="9"/>
+
+  <path class="frame" d="M240 400 370 408 340 272ZM340 272 508 262 519 312 370 408M519 312C530 350 540 380 560 400"/>
+  <path class="ink" d="M340 272 335 246M306 242H368"/>
+  <path class="ink" d="M508 262 503 234H552C582 234 584 278 554 282"/>
+  <circle class="ink" cx="370" cy="408" r="24"/>
+  <path class="ink" d="M370 408 406 456M390 458H424M370 408 334 360M316 358H350"/>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <style>
+    .bg { fill: #e2f3f0; }
+    .table { fill: #c6e9e2; }
+    .soft { fill: #c6e9e2; }
+    .paper { fill: #ffffff; }
+    .accent { fill: #0f766e; }
+    .window { fill: #0b5a54; }
+    .ink, .thin { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .ink { stroke: #0b5a54; stroke-width: 10; }
+    .thin { stroke: #8fbfb7; stroke-width: 7; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #122b29; }
+      .table { fill: #1a3f3b; }
+      .soft { fill: #1a3f3b; }
+      .paper { fill: #0d1112; }
+      .accent { fill: #2dd4bf; }
+      .window { fill: #8fe9da; }
+      .ink { stroke: #8fe9da; }
+      .thin { stroke: #4f7f78; }
+    }
+  </style>
+  <rect class="bg" width="800" height="600"/>
+  <rect class="table" y="490" width="800" height="110"/>
+
+  <path class="accent" d="M618 76A72 72 0 1 0 682 186 66 66 0 0 1 618 76Z"/>
+  <g class="accent">
+    <path d="M180 92q5 19 24 24-19 5-24 24-5-19-24-24 19-5 24-24Z"/>
+    <path d="M262 52q3 12 15 15-12 3-15 15-3-12-15-15 12-3 15-15Z"/>
+    <path d="M110 214q3 12 15 15-12 3-15 15-3-12-15-15 12-3 15-15Z"/>
+    <path d="M520 60q4 15 19 19-15 4-19 19-4-15-19-19 15-4 19-19Z"/>
+    <path d="M700 268q4 15 19 19-15 4-19 19-4-15-19-19 15-4 19-19Z"/>
+  </g>
+
+  <path class="soft" d="M300 360V205h45v45h20v-60h70v60h20v-45h45v155Z"/>
+  <path class="ink" d="M300 360V205h45v45h20v-60h70v60h20v-45h45v155Z"/>
+  <path class="accent" d="M292 205 322 148 353 205ZM447 205 478 148 508 205ZM358 190 400 126 442 190Z"/>
+  <path class="ink" d="M400 126V88l28 13-28 13"/>
+  <rect class="window" x="392" y="212" width="16" height="30" rx="8"/>
+  <rect class="window" x="316" y="232" width="14" height="26" rx="7"/>
+  <rect class="window" x="470" y="232" width="14" height="26" rx="7"/>
+
+  <path class="accent" d="M140 322V510C250 488 350 494 400 528 450 494 550 488 660 510V322Z"/>
+  <path class="paper" d="M400 332C350 296 250 290 165 310V488C250 470 350 474 400 508 450 474 550 470 635 488V310C550 290 450 296 400 332Z"/>
+  <path class="ink" d="M400 332C350 296 250 290 165 310V488C250 470 350 474 400 508 450 474 550 470 635 488V310C550 290 450 296 400 332ZM400 332V508"/>
+  <path class="thin" d="M205 350C265 340 320 345 365 365M205 390C265 380 320 385 365 405M205 430C265 420 320 425 365 445"/>
+  <path class="thin" d="M595 350C535 340 480 345 435 365M595 390C535 380 480 385 435 405M595 430C535 420 480 425 435 445"/>
+</svg>

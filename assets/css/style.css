@@ -1,0 +1,664 @@
+/* ==========================================================================
+   Settings. To restyle the site, change the values in this section only.
+   The first block is light mode; the @media block after it is dark mode.
+   Which one a visitor sees follows their device setting.
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* Colours, light mode */
+  --bg: #ffffff;
+  --surface: #f6f8f8;
+  --border: #dde4e3;
+  --text: #131819;
+  --muted: #56615f;
+  --accent: #0f766e;
+  --accent-hover: #0b5a54;
+  --chip-bg: #e2f3f0;
+  --chip-text: #0b5a54;
+  --code-bg: #f2f5f5;
+
+  /* Type */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Layout */
+  --page-width: 62rem;
+  --reading-width: 42rem;
+  --gutter: 1.25rem;
+  --radius: 0.75rem;
+  --section-gap: 4.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1112;
+    --surface: #151a1b;
+    --border: #283031;
+    --text: #edf1f0;
+    --muted: #9ba7a5;
+    --accent: #2dd4bf;
+    --accent-hover: #5eead4;
+    --chip-bg: #123330;
+    --chip-text: #8fe9da;
+    --code-bg: #151a1b;
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* The column layout keeps the footer at the bottom of short pages */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--page-width) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: var(--gutter);
+  z-index: 10;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.skip-link:hover {
+  color: var(--bg);
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+/* ==========================================================================
+   Top bar and footer
+   ========================================================================== */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding-block: 1rem;
+}
+
+.site-name {
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Stays on the right on the home page, where the name is not shown here */
+.site-nav {
+  margin-left: auto;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding-block: 1.5rem;
+}
+
+/* ==========================================================================
+   Home page
+   ========================================================================== */
+
+.hero {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+  padding-block: clamp(3rem, 8vw, 5.5rem) clamp(3rem, 7vw, 4.5rem);
+}
+
+.hero__avatar {
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* The negative margin hangs the slanted "A" a little to the left. Without it
+   the name looks indented next to the lines below it. */
+.hero__name {
+  margin: 0 0 0 -0.05em;
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  font-weight: 750;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.hero__tagline {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  line-height: 1.4;
+}
+
+.hero__role {
+  display: block;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.hero__focus {
+  display: block;
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 500;
+}
+
+.section {
+  padding-bottom: var(--section-gap);
+}
+
+.section > h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+}
+
+.section__more {
+  margin: 1.25rem 0 0;
+  font-weight: 500;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.about-grid,
+.post-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-text p {
+  margin: 0;
+}
+
+.about-text p + p {
+  margin-top: 1rem;
+}
+
+/* Stack chips */
+
+.stack-group + .stack-group {
+  margin-top: 1rem;
+}
+
+.stack-group h3 {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 0.15rem 0.625rem;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* Blog cards: the link's ::after stretches over the card, so all of it clicks */
+
+.post-card {
+  position: relative;
+  transition: border-color 0.15s ease;
+}
+
+.post-card:hover {
+  border-color: var(--accent);
+}
+
+.post-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.125rem;
+}
+
+.post-card h3 a {
+  color: var(--text);
+}
+
+.post-card h3 a:hover {
+  text-decoration: none;
+}
+
+.post-card h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.post-card time {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.post-card p {
+  margin: 0.625rem 0 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* Hobby tiles */
+
+.hobby-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hobby {
+  margin: 0;
+}
+
+.hobby img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  object-fit: cover;
+}
+
+.hobby figcaption {
+  margin-top: 0.625rem;
+}
+
+.hobby strong {
+  display: block;
+  font-weight: 600;
+}
+
+.hobby span {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 30rem) {
+  .hobby-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 40rem) {
+  .hero {
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero__avatar {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .hero__role,
+  .hero__focus {
+    display: inline;
+  }
+
+  .hero__focus::before {
+    content: "\00b7";
+    margin: 0 0.5em 0 0.22em;
+  }
+
+  .post-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 48rem) {
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hobby-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Blog archive and simple pages
+   ========================================================================== */
+
+.page-head {
+  padding-block: clamp(2.5rem, 7vw, 4rem) 1.5rem;
+}
+
+.page-head h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+.page-head p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.page-links {
+  padding-bottom: var(--section-gap);
+  font-weight: 500;
+}
+
+.page-links a + a {
+  margin-left: 1.5rem;
+}
+
+.archive-year {
+  padding-bottom: 2.5rem;
+}
+
+.archive-year:last-of-type {
+  padding-bottom: var(--section-gap);
+}
+
+.archive-year h2 {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+
+.post-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.125rem 1.5rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-list a {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.post-list a:hover {
+  color: var(--accent);
+}
+
+.post-list time {
+  color: var(--muted);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.post-list p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* ==========================================================================
+   Post page
+   ========================================================================== */
+
+.post {
+  max-width: var(--reading-width);
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 7vw, 4rem) var(--section-gap);
+}
+
+.post__title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  letter-spacing: -0.03em;
+}
+
+.post__date {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.post__back {
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.prose {
+  margin-top: 2rem;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.prose h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.5rem;
+}
+
+.prose h3 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.1875rem;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 1.25rem;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.prose blockquote {
+  margin: 0 0 1.25rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+
+.prose table {
+  display: block;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.prose code {
+  padding: 0.1em 0.35em;
+  border-radius: 0.3em;
+  background: var(--code-bg);
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+.prose pre {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.125rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  line-height: 1.55;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+  font-size: 0.875rem;
+}
+
+/* Code colours (Rouge classes), kept to the site's neutrals and teal */
+
+.highlight :is(.c, .c1, .ch, .cm, .cp, .cpf, .cs) {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.highlight :is(.k, .kc, .kd, .kn, .kp, .kr, .kt, .nt) {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.highlight :is(.s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sr, .ss, .sx, .m, .mf, .mh, .mi, .mo, .il) {
+  color: var(--chip-text);
+}
+
+/* ==========================================================================
+   Visitors who ask for less motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

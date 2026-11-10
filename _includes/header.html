@@ -1,14 +1,14 @@
-<nav id="my-menu">
-  <div>
-    <p>{{ site.title }}</p>
-
-    <ul class="pages">
-      <li><a href="{{ site.baseurl }}/"><i class="fa fa-home"></i> Home</a></li>
-      <li><a href="{{ site.baseurl }}/posts/"><i class="fa fa-archive"></i> All Posts</a></li>
-      <li><a href="{{ site.baseurl }}/search/"><i class="fa fa-search"></i> Search</a></li>
-    </ul>
-
-    {% include social_links.html %}
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    {% unless page.url == '/' %}
+    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.data.profile.name }}</a>
+    {% endunless %}
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="{{ '/#about' | relative_url }}">About</a></li>
+        <li><a href="{{ '/#blog' | relative_url }}">Blog</a></li>
+        <li><a href="{{ '/#hobbies' | relative_url }}">Hobbies</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
-<div class="menu-button" href="#menu"><i class="fa fa-bars"></i></div>
+</header>

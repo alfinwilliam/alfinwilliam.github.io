@@ -1,0 +1,20 @@
+# One entry per tile, shown in this order.
+#   name:  bold text under the image
+#   blurb: one line of text
+#   image: file name inside assets/img/hobbies/ (landscape 4:3 works best, for example 1200x900)
+#   alt:   what the photo shows, for screen readers
+
+- name: Cycling
+  blurb: Weekend cycling rejuvenates me to take on new challenges.
+  image: cycling.svg
+  alt: Illustration of a road bicycle in front of rolling hills
+
+- name: Binge-watching Movies
+  blurb: I love to get into alternate lives and its experiences via movies.
+  image: movies.svg
+  alt: Illustration of a screen playing a film with a striped tub of popcorn beside it
+
+- name: Fiction Reading
+  blurb: Same as movies, but with more imagination and less visual stimulation.
+  image: reading.svg
+  alt: Illustration of an open book with a castle, crescent moon and stars rising from its pages

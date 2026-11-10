@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <style>
+    .bg { fill: #e2f3f0; }
+    .floor { fill: #c6e9e2; }
+    .paper { fill: #ffffff; }
+    .accent { fill: #0f766e; }
+    .ink, .play, .track, .done { stroke-linecap: round; stroke-linejoin: round; }
+    .ink { fill: none; stroke: #0b5a54; stroke-width: 10; }
+    .play { fill: #0f766e; stroke: #0f766e; stroke-width: 18; }
+    .track, .done { fill: none; stroke-width: 10; }
+    .track { stroke: #c6e9e2; }
+    .done { stroke: #0f766e; }
+    .knob { fill: #0b5a54; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #122b29; }
+      .floor { fill: #1a3f3b; }
+      .paper { fill: #0d1112; }
+      .accent { fill: #2dd4bf; }
+      .ink { stroke: #8fe9da; }
+      .play { fill: #2dd4bf; stroke: #2dd4bf; }
+      .track { stroke: #22524c; }
+      .done { stroke: #2dd4bf; }
+      .knob { fill: #8fe9da; }
+    }
+  </style>
+  <rect class="bg" width="800" height="600"/>
+  <rect class="floor" y="500" width="800" height="100"/>
+
+  <path class="ink" d="M370 412v76M288 492h164"/>
+  <rect class="paper" x="110" y="90" width="520" height="322" rx="22"/>
+  <rect class="ink" x="110" y="90" width="520" height="322" rx="22"/>
+  <path class="play" d="M326 178v124l104-62z"/>
+  <path class="track" d="M150 368H590"/>
+  <path class="done" d="M150 368H420"/>
+  <circle class="knob" cx="420" cy="368" r="13"/>
+
+  <g>
+    <circle class="paper" cx="592" cy="338" r="28"/><circle class="ink" cx="592" cy="338" r="28"/>
+    <circle class="paper" cx="676" cy="340" r="26"/><circle class="ink" cx="676" cy="340" r="26"/>
+    <circle class="paper" cx="626" cy="312" r="32"/><circle class="ink" cx="626" cy="312" r="32"/>
+    <circle class="paper" cx="660" cy="314" r="26"/><circle class="ink" cx="660" cy="314" r="26"/>
+  </g>
+  <path class="paper" d="M572 350H696L674 530H594Z"/>
+  <path class="accent" d="M572 350H596.8L610 530H594ZM621.6 350H646.4L642 530H626ZM671.2 350H696L674 530H658Z"/>
+  <path class="ink" d="M572 350H696L674 530H594Z"/>
+  <circle class="paper" cx="716" cy="262" r="13"/><circle class="ink" cx="716" cy="262" r="13"/>
+</svg>
