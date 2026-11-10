@@ -10,6 +10,10 @@ author:
 # Number of posts shown on the home page
 post_limit: 4
 
+# GitHub Pages applies a default theme unless this is null. Its stylesheet
+# builds to the same path as assets/css/style.css and replaces it on rebuilds.
+theme: null
+
 # Build settings
 markdown: kramdown
 kramdown:
