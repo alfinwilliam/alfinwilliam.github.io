@@ -1,38 +1,42 @@
 # Site settings
 title: "Alfin William"
-email: alfinwilliam@gmail.com
-description: "My portfolio site with blog"
+description: "DevOps engineer. AWS, Kubernetes, Terraform."
+url: "https://alfinwilliam.github.io"
 baseurl: ""
-url: "http://carte-noire.jacobtomlinson.co.uk/"
-title_description: "Hi ! I'm a Technology Enthusiast and Passionate Developer who loves computers. I spend my time tinkering around the technical space & converting my ideas into working products. Always on the creative side."
-title_image: "https://s.gravatar.com/avatar/6385e644703f7dd99ff07c00d3078002?s=250"
-google_analytics: "UA-20365477-4"
-disqus_account: cartenoire
-github_repository: https://github.com/jacobtomlinson/carte-noire
-addthis_id: ra-513c6fa83da6ec67
-post_limit: 5
+lang: en
+author:
+  name: "Alfin William"
 
-# Social usernames/URLs
-twitter_username: alfinwilliam
-github_username:  alfinwilliam
-instagram_username: 
-reddit_username: 
-linkedin_link: https://www.linkedin.com/in/alfin-william-91b20832/
-google_plus_link: mailto:alfinwilliam@gmail.com
-stackoverflow_link: https://stackoverflow.com/users/4136843/duke-nukem
-xing_link:
-facebook_link:
-
-# Footer
-footer_left: "Made with <i class=\"fa fa-heart\"></i> by <a href=\"https://twitter.com/alfinwilliam\">Alfin William</a>"
-footer_right: "&lt;/&gt; on <a href=\"https://github.com/alfinwilliam/alfinwilliam.github.io\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
+# Number of posts shown on the home page
+post_limit: 4
 
 # Build settings
 markdown: kramdown
-
 kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+# Do not change this: it decides the URL of every post.
 permalink: pretty
-exclude: [vendor]
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - preview.sh
+
+# This post opens with a heading, which would otherwise become its search and
+# link-preview description.
+defaults:
+  - scope:
+      path: "_posts/2020-11-06-jiofi-hack.md"
+    values:
+      description: "JioFi3 Speed hack"
