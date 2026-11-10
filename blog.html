@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog
+description: All posts by Alfin William.
+permalink: /blog/
+redirect_from:
+  - /posts/
+  - /posts-by-categories/
+  - /search/
+---
+
+<header class="page-head">
+  <h1>Blog</h1>
+</header>
+
+{% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in years %}
+<section class="archive-year">
+  <h2>{{ year.name }}</h2>
+  <ul class="post-list">
+    {% for post in year.items %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %b %Y" }}</time>
+      {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

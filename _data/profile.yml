@@ -1,0 +1,40 @@
+# UNVERIFIED: AI-drafted, check every line before publishing.
+# Delete these two comment lines once you have checked the text below.
+
+name: Alfin William
+
+# The two lines of large type at the top of the home page.
+role: DevOps engineer.
+focus: AWS, Kubernetes, Terraform.
+
+# Optional photo above the headline. Put a square image in assets/img/ and
+# uncomment this line.
+# avatar: /assets/img/avatar.jpg
+
+# One entry per paragraph.
+about:
+  - "DevOps engineer with about six years in IT. Most recently I ran AWS infrastructure for three platforms at a SaaS automation company."
+  - "Day to day that meant Kubernetes on EKS (Karpenter, Istio, ArgoCD, Helm), infrastructure as code with Terraform and Terragrunt, pipelines in Jenkins and Bitbucket Pipelines, and logging and metrics with Fluent Bit, OpenSearch, Prometheus and Grafana."
+
+stack:
+  - group: Cloud
+    items: [AWS, IAM, VPC, EC2, EFS, S3, Lambda, API Gateway, Fargate, Aurora]
+  - group: Kubernetes
+    items: [EKS, Karpenter, Istio, ArgoCD, Helm]
+  - group: Infrastructure as code
+    items: [Terraform, Terragrunt]
+  - group: CI/CD
+    items: [Jenkins, Bitbucket Pipelines]
+  - group: Observability
+    items: [Fluent Bit, OpenSearch, Prometheus, Grafana]
+
+# Shown under the headline, in this order.
+links:
+  - label: GitHub
+    url: https://github.com/alfinwilliam
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/alfin-william-91b20832/
+  - label: Email
+    url: mailto:alfinwilliam@gmail.com
+  - label: RSS
+    url: /feed.xml

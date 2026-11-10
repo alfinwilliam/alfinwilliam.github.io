@@ -1,49 +1,73 @@
 ---
 layout: default
-make-smaller-titles: true
 ---
 
+{% assign profile = site.data.profile %}
 
-<div class="container-fluid index">
-    <div class="row">
+<section class="hero">
+  {% if profile.avatar %}
+  <img class="hero__avatar" src="{{ profile.avatar | relative_url }}" alt="{{ profile.name }}" width="96" height="96">
+  {% endif %}
+  <h1 class="hero__title">{{ profile.role }} <span>{{ profile.focus }}</span></h1>
+  <ul class="link-row">
+    {% for link in profile.links %}
+    <li><a href="{{ link.url | relative_url }}">{{ link.label }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
 
-        <div class="col-md-12 main content-panel">
-
-            <div class="gravatar">
-                <img src="{{ site.title_image }}" class="img-circle about-image" height="150" width="150" alt="{{ site.title }}" />
-            </div>
-
-            <h1 class="header author-header" itemprop="headline">{{ site.title }}</h1>
-
-            <div class="author-text">
-                {{ site.title_description }}
-            </div>
-
-            {% include social_links.html %}
-          </div>
-          <div class="col-md-12 main content-panel">
-
-            <div class="articles">
-
-              <h2>Latest Articles</h2>
-
-              <ul>
-                  {% for post in site.posts limit: site.post_limit %}
-
-                      <li>
-                          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                          <small class="hidden-xs">{{ post.date | date: "%B %-d, %Y" }}</small>
-                      </li>
-
-                  {% endfor %}
-                  <li>
-                      <small><i><a href="{{ site.baseurl }}/posts/">more...</a></i></small>
-                  </li>
-              </ul>
-
-            </div>
-
-        </div>
-
+<section class="section" id="about">
+  <h2>About</h2>
+  <div class="about-grid">
+    <div class="card about-text">
+      {% for paragraph in profile.about %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
     </div>
-</div>
+    <div class="card">
+      {% for group in profile.stack %}
+      <div class="stack-group">
+        <h3>{{ group.group }}</h3>
+        <ul class="chips">
+          {% for item in group.items %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="blog">
+  <h2>Blog</h2>
+  <div class="post-grid">
+    {% for post in site.posts limit: site.post_limit %}
+    <article class="card post-card">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %b %Y" }}</time>
+      {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+  <p class="section__more"><a href="{{ '/blog/' | relative_url }}">All posts &rarr;</a></p>
+</section>
+
+{% if site.data.hobbies and site.data.hobbies.size > 0 %}
+<section class="section" id="hobbies">
+  <h2>Hobbies and interests</h2>
+  <ul class="hobby-grid">
+    {% for hobby in site.data.hobbies %}
+    <li>
+      <figure class="hobby">
+        <img src="{{ '/assets/img/hobbies/' | append: hobby.image | relative_url }}" alt="{{ hobby.alt }}" width="800" height="600" loading="lazy">
+        <figcaption>
+          <strong>{{ hobby.name }}</strong>
+          <span>{{ hobby.blurb }}</span>
+        </figcaption>
+      </figure>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

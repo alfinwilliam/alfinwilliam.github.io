@@ -1,0 +1,20 @@
+# One entry per tile, shown in this order.
+#   name:  bold text under the image
+#   blurb: one line of text
+#   image: file name inside assets/img/hobbies/ (landscape 4:3 works best, for example 1200x900)
+#   alt:   what the photo shows, for screen readers
+
+- name: Hobby one
+  blurb: One line about this hobby.
+  image: placeholder.svg
+  alt: Placeholder image for hobby one
+
+- name: Hobby two
+  blurb: One line about this hobby.
+  image: placeholder.svg
+  alt: Placeholder image for hobby two
+
+- name: Hobby three
+  blurb: One line about this hobby.
+  image: placeholder.svg
+  alt: Placeholder image for hobby three
