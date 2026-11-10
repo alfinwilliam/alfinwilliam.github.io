@@ -218,26 +218,31 @@ main {
   object-fit: cover;
 }
 
+/* The negative margin hangs the slanted "A" a little to the left. Without it
+   the name looks indented next to the lines below it. */
 .hero__name {
-  margin: 0;
-  font-size: clamp(2.75rem, 8vw, 5rem);
+  margin: 0 0 0 -0.05em;
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
   font-weight: 750;
   line-height: 1.05;
   letter-spacing: -0.035em;
 }
 
-.hero__role {
+.hero__tagline {
   margin: 0.75rem 0 0;
-  font-size: clamp(1.375rem, 3.2vw, 1.875rem);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  color: var(--muted);
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  line-height: 1.4;
+}
+
+.hero__role {
+  display: block;
+  color: var(--text);
+  font-weight: 500;
 }
 
 .hero__focus {
-  margin: 0.25rem 0 0;
-  color: var(--muted);
-  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  display: block;
 }
 
 .link-row {
@@ -414,6 +419,16 @@ main {
   .hero__avatar {
     width: 10rem;
     height: 10rem;
+  }
+
+  .hero__role,
+  .hero__focus {
+    display: inline;
+  }
+
+  .hero__focus::before {
+    content: "\00b7";
+    margin: 0 0.5em 0 0.22em;
   }
 
   .post-grid {

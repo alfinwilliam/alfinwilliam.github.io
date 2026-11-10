@@ -10,8 +10,10 @@ layout: default
   {% endif %}
   <div>
     <h1 class="hero__name">{{ profile.name }}</h1>
-    <p class="hero__role">{{ profile.role }}</p>
-    <p class="hero__focus">{{ profile.focus }}</p>
+    <p class="hero__tagline">
+      <span class="hero__role">{{ profile.role }}</span>
+      <span class="hero__focus">{{ profile.focus }}</span>
+    </p>
     <ul class="link-row">
       {% for link in profile.links %}
       <li><a href="{{ link.url | relative_url }}">{{ link.label }}</a></li>
@@ -44,7 +46,7 @@ layout: default
 </section>
 
 <section class="section" id="blog">
-  <h2>Blog</h2>
+  <h2>Tech &amp; Non-tech blogs</h2>
   <div class="post-grid">
     {% for post in site.posts limit: site.post_limit %}
     <article class="card post-card">
