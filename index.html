@@ -6,14 +6,18 @@ layout: default
 
 <section class="hero">
   {% if profile.avatar %}
-  <img class="hero__avatar" src="{{ profile.avatar | relative_url }}" alt="Photo of {{ profile.name }}" width="120" height="120">
+  <img class="hero__avatar" src="{{ profile.avatar | relative_url }}" alt="Photo of {{ profile.name }}" width="160" height="160">
   {% endif %}
-  <h1 class="hero__title">{{ profile.role }} <span>{{ profile.focus }}</span></h1>
-  <ul class="link-row">
-    {% for link in profile.links %}
-    <li><a href="{{ link.url | relative_url }}">{{ link.label }}</a></li>
-    {% endfor %}
-  </ul>
+  <div>
+    <h1 class="hero__name">{{ profile.name }}</h1>
+    <p class="hero__role">{{ profile.role }}</p>
+    <p class="hero__focus">{{ profile.focus }}</p>
+    <ul class="link-row">
+      {% for link in profile.links %}
+      <li><a href="{{ link.url | relative_url }}">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
 <section class="section" id="about">

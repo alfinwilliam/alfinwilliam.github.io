@@ -3,11 +3,11 @@
 
 name: Alfin William
 
-# The two lines of large type at the top of the home page.
+# The two lines under your name at the top of the home page.
 role: DevOps engineer
 focus: AWS, Kubernetes, Terraform
 
-# Photo above the headline. Use a square image. Delete this line to show none.
+# Photo beside your name. Use a square image. Delete this line to show none.
 avatar: /assets/img/avatar.png
 
 # One entry per paragraph.

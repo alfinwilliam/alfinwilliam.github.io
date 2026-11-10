@@ -1,6 +1,8 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
+    {% unless page.url == '/' %}
     <a class="site-name" href="{{ '/' | relative_url }}">{{ site.data.profile.name }}</a>
+    {% endunless %}
     <nav class="site-nav" aria-label="Main">
       <ul>
         <li><a href="{{ '/#about' | relative_url }}">About</a></li>
