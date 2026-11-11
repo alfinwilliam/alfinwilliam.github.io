@@ -8,7 +8,7 @@ categories: Corporate-Life
 
 ## What about it?
 
-This is something the people in tech are really aware of, yet would not acknowledge unless one tastes the bitter side of it. I have read and ignored a lot about this on the internet until one day it came to me as an uninvited guest on a random Wednesday afternoon.
+This is something the people in tech are really aware of, yet would not acknowledge unless one learns it the hard way. I had read and ignored a lot about this on the internet, until one day it arrived as an uninvited guest on a random Wednesday afternoon, opened my inner eye and rewired my work approach.
 
 You may think this is the vanilla version of placing a loudspeaker in front of you and subtly announcing (praising, to be precise) the work you have done to the Maha-manager-rajas in daily sprint-rajasabhas. But No, it's more subtle and complicated than that. The paradox is: the cleaner and quieter you finish a piece of work, the less of it anyone sees.
 
