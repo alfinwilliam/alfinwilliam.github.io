@@ -14,6 +14,7 @@ Everything here works with only git, Docker and the `gh` CLI.
 |---|---|
 | Name, headline, About text, stack, links, photo | `_data/profile.yml` |
 | Hobby tiles | `_data/hobbies.yml` and images in `assets/img/hobbies/` |
+| Games and DevOps Notes links (top menu and home page) | `_data/projects.yml` |
 | Blog posts | `_posts/` |
 | Colours, sizes, font | top section of `assets/css/style.css` |
 | Page structure | `index.html`, `blog.html`, `_layouts/`, `_includes/` |
@@ -66,6 +67,20 @@ Edit `_data/profile.yml`. Each entry under `about:` is one paragraph; each `grou
    ```
 
 Add an entry for a new tile, delete one to remove it. Delete all of them and the whole section disappears.
+
+### Change the links to my other sites
+
+The Games and DevOps Notes links in the top menu, and their sections at the bottom of the home page, all come from `_data/projects.yml`. One entry per site:
+
+```yaml
+- name: Games                # menu label and section heading
+  id: games                  # section anchor: /#games
+  url: https://alfinwilliam.github.io/arcade/
+  text: "One or two sentences."
+  link: Play the games       # link text under the description
+```
+
+Add an entry for another site, delete one to remove it. Keep `name` short: on a phone, these links share one line under the main menu.
 
 ### Change the colours or font
 

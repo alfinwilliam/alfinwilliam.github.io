@@ -1,0 +1,19 @@
+# My other sites. Each entry is a link in the top menu (to the right of a
+# divider) and a short section at the bottom of the home page, in this order.
+#   name: menu label and section heading; keep it short, phones fit about two
+#   id:   the section's anchor, lowercase with dashes (for example /#games)
+#   url:  full address of the site
+#   text: one or two sentences; keep the double quotes
+#   link: text of the link under the description
+
+- name: Games
+  id: games
+  url: https://alfinwilliam.github.io/arcade/
+  text: "Small browser games I built with Claude in my free time, such as Packet Quest, Subnet Slicer, Allow or Deny and Pod Packer. Most are meant for practising a DevOps idea, like subnetting or IAM policy evaluation, and a couple are just for fun."
+  link: Play the games
+
+- name: DevOps Notes
+  id: devops-notes
+  url: https://alfinwilliam.github.io/devops-notes/
+  text: "Every tool has official docs, but skimming between them is a Herculean task. So I put the DevOps topics from the stack I've worked with in one place, drafted with AI help: one concept per page, with a diagram, an exercise and practice questions."
+  link: Read the notes

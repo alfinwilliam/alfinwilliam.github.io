@@ -77,3 +77,11 @@ layout: default
   </ul>
 </section>
 {% endif %}
+
+{% for project in site.data.projects %}
+<section class="section" id="{{ project.id }}">
+  <h2>{{ project.name }}</h2>
+  <p class="project-text">{{ project.text }}</p>
+  <p class="section__more"><a href="{{ project.url }}">{{ project.link }} &rarr;</a></p>
+</section>
+{% endfor %}

@@ -184,6 +184,28 @@ main {
   color: var(--accent);
 }
 
+/* Links to my other sites. On phones they take their own line, right-aligned;
+   from 40rem they sit in line after the main links. */
+.site-nav--sites {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: flex-end;
+  margin-left: 0;
+}
+
+.site-nav--sites ul {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 0.25rem;
+}
+
+.ext-icon {
+  width: 0.65em;
+  height: 0.65em;
+  margin-left: 0.2em;
+  vertical-align: 0.05em;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   color: var(--muted);
@@ -267,6 +289,12 @@ main {
 .section__more {
   margin: 1.25rem 0 0;
   font-weight: 500;
+}
+
+/* Description of one of my other sites (Games, DevOps Notes). Runs the full
+   page width, lining up with the right edge of the hobby tiles. */
+.project-text {
+  margin: 0;
 }
 
 .card {
@@ -433,6 +461,12 @@ main {
 
   .post-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* The header's 1.5rem gap minus 0.25rem matches the 1.25rem between links */
+  .site-nav--sites {
+    flex: 0 0 auto;
+    margin-left: -0.25rem;
   }
 }
 
