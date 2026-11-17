@@ -162,8 +162,11 @@ main {
   letter-spacing: -0.01em;
 }
 
-/* Stays on the right on the home page, where the name is not shown here */
+/* Wide screens (from 40rem): one row of links, on the right. On phones this row
+   is hidden and the Menu button below shows the same links as a list. */
 .site-nav {
+  display: none;
+  gap: 1.25rem;
   margin-left: auto;
 }
 
@@ -184,19 +187,78 @@ main {
   color: var(--accent);
 }
 
-/* Links to my other sites. On phones they take their own line, right-aligned;
-   from 40rem they sit in line after the main links. */
-.site-nav--sites {
-  display: flex;
-  flex: 0 0 100%;
-  justify-content: flex-end;
-  margin-left: 0;
+/* Phones: the Menu button (a <details> element, so no JavaScript) */
+.site-menu {
+  position: relative;
+  margin-left: auto;
 }
 
-.site-nav--sites ul {
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  row-gap: 0.25rem;
+.site-menu > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.site-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.site-menu > summary:hover {
+  color: var(--accent);
+}
+
+.site-menu__icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.site-menu__icon--close,
+.site-menu[open] .site-menu__icon--open {
+  display: none;
+}
+
+.site-menu[open] .site-menu__icon--close {
+  display: block;
+}
+
+.site-menu__panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 20;
+  min-width: 13rem;
+  padding: 0.375rem 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+}
+
+.site-menu__panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-menu__panel ul + ul {
+  margin-top: 0.375rem;
+  padding-top: 0.375rem;
+  border-top: 1px solid var(--border);
+}
+
+.site-menu__panel a {
+  display: block;
+  padding: 0.625rem 1rem;
+  color: var(--text);
+}
+
+.site-menu__panel a:hover {
+  color: var(--accent);
 }
 
 .ext-icon {
@@ -463,10 +525,12 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* The header's 1.5rem gap minus 0.25rem matches the 1.25rem between links */
-  .site-nav--sites {
-    flex: 0 0 auto;
-    margin-left: -0.25rem;
+  .site-nav {
+    display: flex;
+  }
+
+  .site-menu {
+    display: none;
   }
 }
 

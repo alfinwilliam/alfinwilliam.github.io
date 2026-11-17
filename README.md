@@ -80,7 +80,7 @@ The Games and DevOps Notes links in the top menu, and their sections at the bott
   link: Play the games       # link text under the description
 ```
 
-Add an entry for another site, delete one to remove it. Keep `name` short: on a phone, these links share one line under the main menu.
+Add an entry for another site, delete one to remove it. Keep `name` short so the desktop menu stays on one line. On phones, every menu link is in the list behind the Menu button. Both menus are built from `_includes/nav-links.html`.
 
 ### Change the colours or font
 
